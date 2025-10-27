@@ -23,7 +23,7 @@ def hello():
 # load the JSON data, and return it using Flask's jsonify function.
 
 
-@app.route("/inventory", methods=['GET'])
+@app.route("/", methods=['GET'])
 def get_inventory():
     """Reads and returns the inventory data from a JSON file."""
     with open('inventory.json', 'r') as f:
