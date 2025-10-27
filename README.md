@@ -1,1 +1,1 @@
-Google Skills  Pilot
+Google Skills Pilot
