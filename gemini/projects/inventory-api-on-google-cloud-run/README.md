@@ -19,14 +19,18 @@ This is a simple Python Flask application that serves as an inventory API. It is
 
 1.  **Build the Docker image:**
 
-    ```sh
-    docker build -t inventory-app .
+        ```sh
+        docker build -t inventory-app .
+        ```
+
+    =8080 inventory-app
     ```
 
 2.  **Run the Docker container locally:**
 
     ```sh
-    docker run -p 8080:8080 -e PORT=8080 inventory-app
+    docker run -p 8080:8080 -e PORT
+
     ```
 
 3.  **Test the endpoints:**
