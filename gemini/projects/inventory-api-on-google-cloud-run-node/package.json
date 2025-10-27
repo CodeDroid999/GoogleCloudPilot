@@ -1,0 +1,21 @@
+{
+    "name": "inventory-api-on-google-cloud-run",
+    "version": "1.0.0",
+    "description": "A simple Express + EJS app for greeting users, with tests and Cloud Run deployment.",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "test": "mocha test.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "ejs": "^3.1.10",
+        "express": "^4.19.2"
+    },
+    "devDependencies": {
+        "mocha": "^10.4.0",
+        "supertest": "^7.1.1"
+    },
+    "author": "Your Name",
+    "license": "MIT"
+}

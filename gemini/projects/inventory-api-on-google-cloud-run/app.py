@@ -29,6 +29,14 @@ def get_inventory():
     with open('inventory.json', 'r') as f:
         inventory_data = json.load(f)
     return jsonify(inventory_data)
+    try:
+        with open('inventory.json', 'r') as f:
+            inventory_data = json.load(f)
+        return jsonify(inventory_data)
+    except FileNotFoundError:
+        return jsonify({"error": "Inventory data not found."}), 404
+    except json.JSONDecodeError:
+        return jsonify({"error": "Failed to parse inventory data."}), 500
 
 
 if __name__ == "__main__":

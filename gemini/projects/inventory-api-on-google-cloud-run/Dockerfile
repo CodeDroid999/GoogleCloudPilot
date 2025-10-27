@@ -3,7 +3,7 @@
 FROM python:3.9-slim
 
 # Set the working directory in the container
-WORKDIR /app/gemini/projects/inventory-api-on-google-cloud-run
+WORKDIR /gemini/projects/inventory-api-on-google-cloud-run
 
 
 # Copy the requirements file into the container
