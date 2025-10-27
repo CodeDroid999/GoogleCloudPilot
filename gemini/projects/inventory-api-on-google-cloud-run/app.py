@@ -23,6 +23,7 @@ def hello():
     <h2>Links:</h2>
     <ul>
         <li><a href="/inventory">View inventory </li>
+        <li><a href="/inventory">View inventory</a></li>
     </ul>
     """
     return html
