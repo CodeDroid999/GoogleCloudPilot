@@ -17,11 +17,12 @@ def hello():
     # Simple HTML page with links
     html = f"""
     <h1>Hello from Cloud Run!</h1>
+    <br>
     <p>Service: {service}</p>
     <p>Revision: {revision}</p>
-    <h2>Available routes:</h2>
+    <h2>Links:</h2>
     <ul>
-        <li><a href="/inventory">/inventory</a> - View inventory JSON data</li>
+        <li><a href="/inventory">View inventory </li>
     </ul>
     """
     return html
