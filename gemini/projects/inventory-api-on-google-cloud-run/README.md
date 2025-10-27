@@ -19,18 +19,14 @@ This is a simple Python Flask application that serves as an inventory API. It is
 
 1.  **Build the Docker image:**
 
-        ```sh
-        docker build -t inventory-app .
-        ```
-
-    =8080 inventory-app
+    ```sh
+    docker build -t inventory-app .
     ```
 
 2.  **Run the Docker container locally:**
 
     ```sh
-    docker run -p 8080:8080 -e PORT
-
+    docker run -p 8080:8080 -e PORT=8080 inventory-app
     ```
 
 3.  **Test the endpoints:**
@@ -55,17 +51,8 @@ This is a simple Python Flask application that serves as an inventory API. It is
     ```
 
 3.  **Build and push the image to Artifact Registry:**
-
     ```sh
     gcloud builds submit --tag $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME
-    ```
-
-4.  **Deploy the image to Cloud Run:**
-    ```sh
-    gcloud run deploy $IMAGE_NAME \
-        --image=$REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME \
-        --region=$REGION \
-        --allow-unauthenticated
     ```
 
 After deployment, `gcloud` will provide a public URL to access your service.
