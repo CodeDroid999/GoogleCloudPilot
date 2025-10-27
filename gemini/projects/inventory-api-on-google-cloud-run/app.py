@@ -5,30 +5,22 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def hello():
     """
     A simple "Hello World" endpoint that also shows some
     Cloud Run environment variables.
     """
-    # Get Cloud Run environment variables
     service = os.environ.get("K_SERVICE", "Unknown service")
     revision = os.environ.get("K_REVISION", "Unknown revision")
-
     return f"Hello from Cloud Run! Service: {service}, Revision: {revision}"
 
-# Gemini Code Generation Prompt:
-# Create a Flask route for "/inventory" that handles GET requests.
-# This function should open and read the 'inventory.json' file,
-# load the JSON data, and return it using Flask's jsonify function.
 
-
-@app.route("/", methods=['GET'])
+@app.route("/inventory", methods=['GET'])
 def get_inventory():
-    """Reads and returns the inventory data from a JSON file."""
-    with open('inventory.json', 'r') as f:
-        inventory_data = json.load(f)
-    return jsonify(inventory_data)
+    """
+    Reads and returns the inventory data from inventory.json.
+    """
     try:
         with open('inventory.json', 'r') as f:
             inventory_data = json.load(f)
