@@ -9,11 +9,22 @@ app = Flask(__name__)
 def hello():
     """
     A simple "Hello World" endpoint that also shows some
-    Cloud Run environment variables.
+    Cloud Run environment variables and links to other routes.
     """
     service = os.environ.get("K_SERVICE", "Unknown service")
     revision = os.environ.get("K_REVISION", "Unknown revision")
-    return f"Hello from Cloud Run! Service: {service}, Revision: {revision}"
+
+    # Simple HTML page with links
+    html = f"""
+    <h1>Hello from Cloud Run!</h1>
+    <p>Service: {service}</p>
+    <p>Revision: {revision}</p>
+    <h2>Available routes:</h2>
+    <ul>
+        <li><a href="/inventory">/inventory</a> - View inventory JSON data</li>
+    </ul>
+    """
+    return html
 
 
 @app.route("/inventory", methods=['GET'])
