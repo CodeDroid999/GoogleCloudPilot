@@ -1,6 +1,6 @@
 // test.js
 const request = require("supertest");
-const app = require("./app");
+const app = require("./inventory-api-on-google-cloud-run-node/app.js");
 const assert = require("assert");
 
 describe("App routes", function () {
