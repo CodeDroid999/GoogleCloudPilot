@@ -3,8 +3,7 @@
 FROM python:3.9-slim
 
 # Set the working directory in the container
-WORKDIR /gemini/projects/inventory-api-on-google-cloud-run
-
+WORKDIR /gemini/projects/flask
 
 # Copy the requirements file into the container
 COPY requirements.txt .
