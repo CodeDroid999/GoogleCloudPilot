@@ -2,7 +2,7 @@
 FROM node:20-slim
 
 # Set the working directory
-WORKDIR /gemini/projects/inventory-api-on-google-cloud-run
+WORKDIR /gemini/projects/node
 
 # Copy package files and install dependencies
 COPY package*.json ./
